@@ -177,7 +177,12 @@ void AP_Motors6DOF::setup_motors(motor_frame_class frame_class, motor_frame_type
 
     case SUB_FRAME_CUSTOM:
         // Put your custom motor setup here
-        //break;
+         _frame_class_string = "CUSTOM";
+        add_motor_raw_6dof(AP_MOTORS_MOT_1,     -1.0f,         -1.0f,             +1.0f,          +1.0f,               0.5f,              +1.0f,          1);
+        add_motor_raw_6dof(AP_MOTORS_MOT_2,     -1.0f,         +1.0f,             -0.5f,          -1.0f,              -0.5f,              -0.5f,          2);
+        add_motor_raw_6dof(AP_MOTORS_MOT_3,     +1.0f,         -1.0f,             -0.5f,          -1.0f,              -1.0f,              -1.0f,          3);
+        add_motor_raw_6dof(AP_MOTORS_MOT_4,     -1.0f,         +1.0f,             +1.0f,          +1.0f,              +1.0f,               0.5f,          4)
+        break;
 
     case SUB_FRAME_SIMPLEROV_3:
         _frame_class_string = "SIMPLEROV_3";
